@@ -1,0 +1,19 @@
+{
+  "name": "points-miner",
+  "collaborators": [
+    "utxo detective <harrison@beckerich.org>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "points_miner_bg.wasm",
+    "points_miner.js",
+    "points_miner_bg.js",
+    "points_miner.d.ts"
+  ],
+  "module": "points_miner.js",
+  "types": "points_miner.d.ts",
+  "sideEffects": [
+    "./points_miner.js",
+    "./snippets/*"
+  ]
+}

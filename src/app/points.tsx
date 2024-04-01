@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { HashPointsArtifact, deploy, mine, sync } from '@/contracts/contract'
 import { Button } from '@/components/ui/button'
 
 let init = false
@@ -13,6 +12,8 @@ export default function Points() {
 
 	React.useEffect(() => {
 		async function run() {
+			const { deploy, sync } = await import('@/contracts/contract')
+
 			if (typeof window !== 'undefined' && !init) {
 				init = true
 				if (!localStorage.getItem('point-contract')) {
@@ -29,6 +30,7 @@ export default function Points() {
 	}, [])
 
 	const handleStart = React.useCallback(async () => {
+		const { mine } = await import('@/contracts/contract')
 		setStarted(true)
 
 		let i = instance
